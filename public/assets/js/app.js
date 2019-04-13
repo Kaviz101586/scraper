@@ -7,14 +7,24 @@ $(document).on("click", "#scrapeIt", function () {
       res.redirect("/")
     });
 });
-  
-$(document).on("click", ".commentBtn", function (event) {
+
+// $(document).on("click", ".noteBtn", expand);
+
+// function expand() {
+//   $("#noteTable").empty();
+//   let thisId = $(this.attr("data-id"));
+//   $.get("/api/notes" + data-id, res => {
+//     $()
+//   })
+// }
+
+$(document).on("click", ".noteBtn", function (event) {
     $("#notes").empty();
     var thisId = $(this).attr("data-id");
   
     $.ajax({
       method: "GET",
-      url: "/articles/" + thisId
+      url: "https://hbr.org/" + "articles/" + thisId
     })
       .then(function (data) {
         var noteSection = $("<div>")
@@ -36,7 +46,7 @@ $(document).on("click", ".commentBtn", function (event) {
   
       $.ajax({
         method: "POST",
-        url: "/articles/" + thisId,
+        url: "https://hbr.org/" + "articles/" + thisId,
         data: {
           title: $("#titleinput").val(),
           body: $("#bodyinput").val()

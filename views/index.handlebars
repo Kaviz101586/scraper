@@ -1,0 +1,27 @@
+<div id="wrapper">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1 class="text-center">HBR Scraper</h1>
+                <h2 class="text-center"><i>Harvard Business Review Articles</i></h2>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <a href="/scrape"><button class='btn btn-success text-center' id='scrapeIt'>Scrape Articles</button></a>
+                <a href="/view"><button class='btn btn-info text-center' id='showArticles'>View Articles</button></a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="list-group">
+                    {{#each articles}}
+                        {{> articles/article-block}}
+                    {{/each}}
+                </ul>
+            </div>
+            <div class="col-md-12">
+                <div id="notes"></div>
+            </div>
+        </div>
+</div>
